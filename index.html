@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bansuri Pro Studio | Pranav Amge</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <canvas id="visualizer"></canvas>
+
+    <header class="ui-header">
+        <div class="logo">BANSURI <span>PRO</span></div>
+        <nav>
+            <button class="nav-btn" onclick="showPage('instrument')">Studio</button>
+            <button class="nav-btn" onclick="showPage('science')">Technical</button>
+            <button class="nav-btn" onclick="showPage('about')">Our Vision</button>
+        </nav>
+    </header>
+
+    <main id="instrument-page" class="page active">
+        <button id="startBtn" class="primary-btn">Initialize Engine</button>
+        <div class="flute-wrapper">
+            <div class="flute">
+                <div class="feather-container"><div class="feather-stem"><div class="feather-eye"></div></div></div>
+                <div class="hole" id="key-q" data-key="Q"></div>
+                <div class="hole" id="key-w" data-key="W"></div>
+                <div class="hole" id="key-e" data-key="E"></div>
+                <div class="hole" id="key-r" data-key="R"></div>
+                <div class="hole" id="key-t" data-key="T"></div>
+                <div class="hole" id="key-y" data-key="Y"></div>
+            </div>
+        </div>
+        <p class="instruction">Hold <b>SPACE</b> to breathe • Keys <b>Q-Y</b> for notes</p>
+    </main>
+
+    <section id="science-page" class="page">
+        <div class="card tech-blueprint-card">
+            <h2>The Technical Blueprint</h2>
+            <div class="blueprint-intro">
+                <p>This instrument uses <b>Additive Audio Synthesis</b> to generate organic sound from pure mathematics rather than static recordings.</p>
+            </div>
+            <div class="tech-grid">
+                <div class="tech-item">
+                    <div class="item-header"><span class="dot"></span><h3>Harmonic Series</h3></div>
+                    <p>We layer three different sine waves at specific mathematical intervals to recreate the "hollow" timbre of natural bamboo resonance.</p>
+                </div>
+                <div class="tech-item">
+                    <div class="item-header"><span class="dot"></span><h3>Portamento Glide</h3></div>
+                    <p>A 100ms frequency transition ensures notes slide into each other, simulating the physical movement of air within the pipe.</p>
+                </div>
+                <div class="tech-item">
+                    <div class="item-header"><span class="dot"></span><h3>Impulse Response</h3></div>
+                    <p>A custom convolution engine simulates a virtual 2.5-second hall reverb, placing the digital flute in a real-world acoustic space.</p>
+                </div>
+                <div class="tech-item">
+                    <div class="item-header"><span class="dot"></span><h3>Attack & Release</h3></div>
+                    <p>Exponential gain ramping prevents digital "clipping," mimicking the soft start and end of a human breath.</p>
+                </div>
+            </div>
+            <div class="blueprint-footer">
+                <p><i>Note: Frequency mapping is tuned to the C-Natural scale for optimal clarity.</i></p>
+            </div>
+            <button class="primary-btn" onclick="showPage('instrument')">Return to Studio</button>
+        </div>
+    </section>
+
+    <section id="about-page" class="page">
+        <div class="card vision-card">
+            <h2>Our Vision</h2>
+            <div class="vision-text">
+                <p>This project was created to explore how technology can produce not just sound — <b>but calm.</b></p>
+                <p>Bansuri Pro Studio is an experiment in cyber-acoustics, combining Web Audio synthesis with the spiritual philosophy of Indian classical instruments.</p>
+                <p>The goal was not accuracy alone, but <b>peace, breath, and flow.</b></p>
+                <div class="connect-section">
+                    <span class="gold-text">Connect with the Creator</span>
+                    <div class="social-links">
+                        <a href="#" class="social-link">LinkedIn</a>
+                        <a href="https://github.com/pp123344" class="social-link">GitHub</a>
+                        <a href="mailto:amgepranav@gmail.com" class="social-link">Email</a>
+                    </div>
+                </div>
+                <div class="disclaimer-box">
+                    <p><b>Note:</b> Created for fun and educational purposes only. This is a digital tribute and does not intend to replace or disrespect the sacred tradition of the Bansuri.</p>
+                </div>
+                <p class="signature">Built with love, patience, and curiosity.</p>
+            </div>
+            <button class="primary-btn" onclick="showPage('instrument')">Return to Peace</button>
+        </div>
+    </section>
+
+    <footer class="footer-rights">© 2026 Pranav Amge | Studio Bansuri. All Rights Reserved.</footer>
+    <script src="script.js"></script>
+</body>
+</html>

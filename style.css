@@ -1,0 +1,90 @@
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Inter:wght@300;400;600&display=swap');
+
+:root {
+    --gold: #d4af37;
+    --gold-glow: rgba(212, 175, 55, 0.3);
+    --cyan: #00d4ff;
+}
+
+body {
+    margin: 0; background: #050508; color: white;
+    font-family: 'Inter', sans-serif; overflow: hidden;
+    display: flex; flex-direction: column; align-items: center; min-height: 100vh;
+}
+
+body::before {
+    content: ''; position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+    background: radial-gradient(circle at 50% 50%, #101a25 0%, transparent 70%),
+                radial-gradient(circle at 20% 80%, #0d0d15 0%, transparent 50%);
+    z-index: -2;
+}
+
+#visualizer {
+    position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%);
+    width: 100vw; height: 100vh; z-index: -1; filter: blur(40px); opacity: 0.3;
+}
+
+.ui-header {
+    width: 100%; padding: 25px 60px; display: flex; justify-content: space-between; align-items: center;
+    background: rgba(255, 255, 255, 0.03); backdrop-filter: blur(15px);
+    border-bottom: 1px solid rgba(212, 175, 55, 0.2); box-sizing: border-box; z-index: 100;
+}
+
+.logo { font-family: 'Cinzel', serif; color: var(--gold); letter-spacing: 6px; font-size: 1.5rem; text-shadow: 0 0 15px var(--gold-glow); }
+.nav-btn { background: none; border: none; color: #888; cursor: pointer; font-family: 'Cinzel'; margin-left: 15px; transition: 0.4s; }
+.nav-btn:hover { color: var(--gold); }
+
+.flute-wrapper { margin-top: 80px; perspective: 1000px; }
+.flute {
+    display: flex; gap: 35px; padding: 60px 100px; border-radius: 120px;
+    background: linear-gradient(180deg, #2d1403, #5d2e0a 15%, #b5651d 45%, #8b4513 55%, #3e1f07 85%, #1a0a02);
+    position: relative; box-shadow: 0 40px 100px rgba(0,0,0,0.9), inset 0 2px 5px rgba(255,255,255,0.1);
+}
+.flute::before, .flute::after {
+    content: ''; position: absolute; width: 18px; height: 100%; top: 0;
+    background: repeating-linear-gradient(0deg, #111, #111 2px, #333 4px); opacity: 0.8;
+}
+.flute::before { left: 50px; } .flute::after { right: 50px; }
+
+.feather-container { position: absolute; top: -120px; right: 90px; animation: divineSway 6s ease-in-out infinite; transform-origin: bottom center; z-index: 10; }
+@keyframes divineSway { 0%, 100% { transform: rotate(14deg); } 50% { transform: rotate(24deg); } }
+.feather-stem { width: 55px; height: 160px; border-radius: 50% 50% 20% 20%; background: linear-gradient(135deg, #005f73, #0a9396, #94d2bd); filter: drop-shadow(0 0 20px rgba(0, 212, 255, 0.4)); }
+.feather-eye { position: absolute; top: 20px; left: 50%; transform: translateX(-50%); width: 30px; height: 40px; border-radius: 50%; background: radial-gradient(circle, #000 15%, #5e35b1 30%, #00d4ff 60%); box-shadow: 0 0 15px var(--cyan); }
+
+.hole {
+    width: 65px; height: 65px; border-radius: 50%; position: relative; cursor: pointer; transition: 0.2s;
+    background: radial-gradient(circle at 30% 30%, #1a1a1a 0%, #000 100%); border: 4px solid #222;
+    box-shadow: inset 0 10px 20px rgba(0,0,0,1);
+}
+.hole::before { content: attr(data-key); position: absolute; bottom: -30px; left: 50%; transform: translateX(-50%); font-size: 0.7rem; color: #555; font-weight: bold; }
+.hole.active { background: radial-gradient(circle, var(--cyan) 0%, #003a4d 100%); box-shadow: 0 0 50px var(--cyan), inset 0 0 15px white; border-color: white; transform: scale(0.9) translateY(2px); }
+
+/* TECH BLUEPRINT STYLES */
+.tech-blueprint-card { max-width: 800px !important; text-align: left !important; }
+.blueprint-intro { margin-bottom: 30px; border-left: 3px solid var(--gold); padding-left: 20px; }
+.tech-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 30px; margin-bottom: 30px; }
+.item-header { display: flex; align-items: center; gap: 10px; margin-bottom: 8px; }
+.dot { width: 6px; height: 6px; background: var(--gold); border-radius: 50%; box-shadow: 0 0 10px var(--gold); }
+.tech-item h3 { font-family: 'Cinzel', serif; font-size: 0.9rem; color: var(--gold); margin: 0; letter-spacing: 1px; }
+.tech-item p { font-size: 0.85rem; line-height: 1.5; color: #aaa; }
+.blueprint-footer { margin-bottom: 30px; padding: 10px; background: rgba(212, 175, 55, 0.05); border-radius: 8px; text-align: center; }
+
+/* SHARED CARD STYLES */
+.card { background: rgba(255, 255, 255, 0.03); padding: 40px; border-radius: 30px; border: 1px solid rgba(212, 175, 55, 0.2); backdrop-filter: blur(25px); }
+.vision-text p { font-size: 1.05rem; line-height: 1.6; color: #ccc; margin-bottom: 15px; }
+.signature { font-family: 'Cinzel'; color: var(--gold) !important; margin-top: 25px !important; letter-spacing: 2px; text-align: center; }
+.connect-section { margin-top: 25px; text-align: center; }
+.social-links { display: flex; justify-content: center; gap: 15px; margin-top: 10px; }
+.social-link { color: #888; text-decoration: none; font-size: 0.75rem; border: 1px solid #333; padding: 5px 15px; border-radius: 20px; transition: 0.3s; }
+.social-link:hover { color: var(--gold); border-color: var(--gold); }
+.disclaimer-box { margin-top: 20px; padding: 12px; background: rgba(0,0,0,0.3); border-radius: 10px; border: 1px dashed rgba(212, 175, 55, 0.1); }
+.disclaimer-box p { font-size: 0.75rem !important; color: #666 !important; text-align: center; }
+
+.primary-btn { padding: 15px 40px; background: transparent; border: 1px solid var(--gold); color: var(--gold); font-family: 'Cinzel', serif; border-radius: 40px; cursor: pointer; transition: 0.4s; letter-spacing: 2px; }
+.primary-btn:hover { background: var(--gold); color: black; box-shadow: 0 0 30px var(--gold-glow); }
+.instruction { margin-top: 50px; color: #444; letter-spacing: 2px; font-size: 0.8rem; }
+.footer-rights { position: fixed; bottom: 20px; opacity: 0.4; font-size: 0.7rem; color: var(--gold); letter-spacing: 2px; width: 100%; text-align: center; pointer-events: none; }
+
+.page { display: none; width: 100%; height: 75vh; align-items: center; justify-content: center; flex-direction: column; }
+.page.active { display: flex; animation: fadeIn 0.8s ease; }
+@keyframes fadeIn { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
