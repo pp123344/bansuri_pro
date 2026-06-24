@@ -46,10 +46,9 @@ body::before {
 }
 .flute::before { left: 50px; } .flute::after { right: 50px; }
 
-.feather-container { position: absolute; top: -120px; right: 90px; animation: divineSway 6s ease-in-out infinite; transform-origin: bottom center; z-index: 10; }
+.feather-container { position: absolute; top: -220px; right: 70px; width: 100px; animation: divineSway 6s ease-in-out infinite; transform-origin: bottom center; z-index: 10; }
 @keyframes divineSway { 0%, 100% { transform: rotate(14deg); } 50% { transform: rotate(24deg); } }
-.feather-stem { width: 55px; height: 160px; border-radius: 50% 50% 20% 20%; background: linear-gradient(135deg, #005f73, #0a9396, #94d2bd); filter: drop-shadow(0 0 20px rgba(0, 212, 255, 0.4)); }
-.feather-eye { position: absolute; top: 20px; left: 50%; transform: translateX(-50%); width: 30px; height: 40px; border-radius: 50%; background: radial-gradient(circle, #000 15%, #5e35b1 30%, #00d4ff 60%); box-shadow: 0 0 15px var(--cyan); }
+.feather-img { width: 100%; height: auto; display: block; filter: drop-shadow(0 0 18px rgba(0, 212, 255, 0.35)); }
 
 .hole {
     width: 65px; height: 65px; border-radius: 50%; position: relative; cursor: pointer; transition: 0.2s;
@@ -87,4 +86,17 @@ body::before {
 
 .page { display: none; width: 100%; height: 75vh; align-items: center; justify-content: center; flex-direction: column; }
 .page.active { display: flex; animation: fadeIn 0.8s ease; }
+
+/* Visually hidden but readable by search engines & screen readers (do NOT use display:none — that hides from crawlers too) */
+.visually-hidden {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+}
 @keyframes fadeIn { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }

@@ -3,16 +3,77 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bansuri Pro Studio | Pranav Amge</title>
+
+    <!-- Primary SEO -->
+    <title>Bansuri Pro Studio | Play a Virtual Bamboo Flute Online (Web Audio Synth)</title>
+    <meta name="description" content="Play a free virtual bansuri (Indian bamboo flute) right in your browser. Bansuri Pro Studio uses Web Audio additive synthesis, portamento glide, and convolution reverb to recreate the calm, breathy sound of a real bansuri — no app or download needed.">
+    <meta name="keywords" content="bansuri, virtual bansuri, online flute, bamboo flute simulator, Indian classical instrument, web audio synthesis, play flute online, Pranav Amge, cyber-acoustics">
+    <meta name="author" content="Pranav Amge">
+    <link rel="canonical" href="https://bansuripro.vercel.app/">
+    <meta name="robots" content="index, follow, max-image-preview:large">
+    <meta name="theme-color" content="#003a4d">
+
+    <!-- Open Graph / Facebook / LinkedIn -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://bansuripro.vercel.app/">
+    <meta property="og:title" content="Bansuri Pro Studio | Play a Virtual Bamboo Flute Online">
+    <meta property="og:description" content="A web-based bansuri you can play with your keyboard. Built with Web Audio additive synthesis, portamento glide, and a custom hall reverb for an organic, meditative sound.">
+    <meta property="og:image" content="https://bansuripro.vercel.app/og-image.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:site_name" content="Bansuri Pro Studio">
+    <meta property="og:locale" content="en_US">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Bansuri Pro Studio | Play a Virtual Bamboo Flute Online">
+    <meta name="twitter:description" content="A web-based bansuri you can play with your keyboard, powered by Web Audio synthesis and a custom reverb engine.">
+    <meta name="twitter:image" content="https://bansuripro.vercel.app/og-image.png">
+
+    <!-- Icons -->
+    <link rel="icon" href="/favicon.ico" sizes="any">
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+    <link rel="manifest" href="/site.webmanifest">
+
     <link rel="stylesheet" href="style.css">
     <meta name="google-site-verification" content="8bxW_cejpjYx2o0DFXQva7G-gwNKArst967U00meKzY" />
+
+    <!-- Structured Data: helps Google understand this is a software app / creative work -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebApplication",
+      "name": "Bansuri Pro Studio",
+      "url": "https://bansuripro.vercel.app/",
+      "description": "A browser-based virtual bansuri (Indian bamboo flute) using Web Audio additive synthesis, portamento glide, and convolution reverb to simulate an organic, breath-driven instrument.",
+      "applicationCategory": "MusicApplication",
+      "operatingSystem": "Any (runs in a modern web browser)",
+      "browserRequirements": "Requires JavaScript and the Web Audio API",
+      "isAccessibleForFree": true,
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD"
+      },
+      "author": {
+        "@type": "Person",
+        "name": "Pranav Amge",
+        "url": "https://github.com/pp123344"
+      },
+      "creator": {
+        "@type": "Person",
+        "name": "Pranav Amge"
+      }
+    }
+    </script>
 </head>
 <body>
     <canvas id="visualizer"></canvas>
 
     <header class="ui-header">
         <div class="logo">BANSURI <span>PRO</span></div>
-        <nav>
+        <nav aria-label="Main navigation">
             <button class="nav-btn" onclick="showPage('instrument')">Studio</button>
             <button class="nav-btn" onclick="showPage('science')">Technical</button>
             <button class="nav-btn" onclick="showPage('about')">Our Vision</button>
@@ -20,10 +81,19 @@
     </header>
 
     <main id="instrument-page" class="page active">
+        <h1 class="visually-hidden">Bansuri Pro Studio — Play a Virtual Indian Bamboo Flute Online</h1>
+        <p class="visually-hidden">
+            Bansuri Pro Studio is a free, browser-based simulation of the bansuri, the traditional Indian bamboo flute.
+            It uses Web Audio additive synthesis, portamento glide, and a custom convolution reverb to recreate the
+            warm, breathy tone of the real instrument. Click "Initialize Engine," hold Space to breathe air into the
+            flute, and use the Q, W, E, R, T, Y keys to play notes.
+        </p>
         <button id="startBtn" class="primary-btn">Initialize Engine</button>
         <div class="flute-wrapper">
             <div class="flute">
-                <div class="feather-container"><div class="feather-stem"><div class="feather-eye"></div></div></div>
+                <div class="feather-container">
+                    <img src="C:\Users\Pranav\Desktop\files\peacock-feather.svg" alt="Illustrated peacock feather, a symbol of the bansuri's cultural heritage" class="feather-img">
+                </div>
                 <div class="hole" id="key-q" data-key="Q"></div>
                 <div class="hole" id="key-w" data-key="W"></div>
                 <div class="hole" id="key-e" data-key="E"></div>

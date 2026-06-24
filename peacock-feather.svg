@@ -1,0 +1,90 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 220 460" fill="none">
+  <defs>
+    <linearGradient id="quillGrad" x1="0" y1="460" x2="0" y2="0" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#0a9396"/>
+      <stop offset="55%" stop-color="#005f73"/>
+      <stop offset="100%" stop-color="#003a4d"/>
+    </linearGradient>
+
+    <linearGradient id="barbGradL" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#0a9396" stop-opacity="0"/>
+      <stop offset="55%" stop-color="#0a9396" stop-opacity="0.55"/>
+      <stop offset="100%" stop-color="#94d2bd" stop-opacity="0.85"/>
+    </linearGradient>
+    <linearGradient id="barbGradR" x1="1" y1="0" x2="0" y2="0">
+      <stop offset="0%" stop-color="#0a9396" stop-opacity="0"/>
+      <stop offset="55%" stop-color="#0a9396" stop-opacity="0.55"/>
+      <stop offset="100%" stop-color="#94d2bd" stop-opacity="0.85"/>
+    </linearGradient>
+
+    <radialGradient id="eyeCore" cx="50%" cy="42%" r="60%">
+      <stop offset="0%" stop-color="#020205"/>
+      <stop offset="38%" stop-color="#0a0a14"/>
+      <stop offset="60%" stop-color="#3a1f6e"/>
+      <stop offset="100%" stop-color="#1b0f3a"/>
+    </radialGradient>
+    <radialGradient id="eyeBronze" cx="50%" cy="46%" r="68%">
+      <stop offset="0%" stop-color="#3a1f6e" stop-opacity="0"/>
+      <stop offset="62%" stop-color="#3a1f6e" stop-opacity="0"/>
+      <stop offset="75%" stop-color="#9c7a2e"/>
+      <stop offset="90%" stop-color="#d4af37"/>
+      <stop offset="100%" stop-color="#d4af37" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="eyeCyan" cx="50%" cy="48%" r="78%">
+      <stop offset="0%" stop-color="#00d4ff" stop-opacity="0"/>
+      <stop offset="80%" stop-color="#00d4ff" stop-opacity="0"/>
+      <stop offset="92%" stop-color="#00d4ff" stop-opacity="0.85"/>
+      <stop offset="100%" stop-color="#00d4ff" stop-opacity="0"/>
+    </radialGradient>
+
+    <filter id="softGlow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="4" result="b"/>
+      <feMerge>
+        <feMergeNode in="b"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+
+  <!-- ===== Barbs (feathery fringe), drawn back to front, asymmetric pairs ===== -->
+  <g stroke-linecap="round">
+    <!-- Lower wide barbs -->
+    <path d="M110 446 C 56 424, 12 380, 0 322" stroke="url(#barbGradL)" stroke-width="3" opacity="0.95"/>
+    <path d="M110 446 C 164 424, 208 380, 220 322" stroke="url(#barbGradR)" stroke-width="3" opacity="0.95"/>
+    <path d="M110 430 C 60 410, 18 372, 6 322" stroke="url(#barbGradL)" stroke-width="3" opacity="0.9"/>
+    <path d="M110 430 C 160 410, 200 372, 212 322" stroke="url(#barbGradR)" stroke-width="3" opacity="0.9"/>
+    <path d="M108 410 C 64 392, 28 358, 16 314" stroke="url(#barbGradL)" stroke-width="2.6" opacity="0.8"/>
+    <path d="M112 410 C 156 392, 190 358, 200 314" stroke="url(#barbGradR)" stroke-width="2.6" opacity="0.8"/>
+    <path d="M107 386 C 68 370, 36 340, 24 300" stroke="url(#barbGradL)" stroke-width="2.4" opacity="0.75"/>
+    <path d="M113 386 C 150 370, 180 340, 192 300" stroke="url(#barbGradR)" stroke-width="2.4" opacity="0.75"/>
+
+    <path d="M107 358 C 72 344, 42 318, 32 282" stroke="url(#barbGradL)" stroke-width="2.2" opacity="0.7"/>
+    <path d="M113 358 C 144 344, 174 318, 184 282" stroke="url(#barbGradR)" stroke-width="2.2" opacity="0.7"/>
+    <path d="M107 332 C 76 320, 50 296, 40 264" stroke="url(#barbGradL)" stroke-width="2" opacity="0.68"/>
+    <path d="M113 332 C 140 320, 166 296, 176 264" stroke="url(#barbGradR)" stroke-width="2" opacity="0.68"/>
+    <path d="M107 306 C 80 296, 58 274, 48 246" stroke="url(#barbGradL)" stroke-width="1.8" opacity="0.65"/>
+    <path d="M113 306 C 136 296, 158 274, 168 246" stroke="url(#barbGradR)" stroke-width="1.8" opacity="0.65"/>
+
+    <!-- Upper narrowing barbs, near the eye -->
+    <path d="M108 256 C 90 248, 76 234, 68 214" stroke="url(#barbGradL)" stroke-width="1.7" opacity="0.62"/>
+    <path d="M112 256 C 130 248, 144 234, 152 214" stroke="url(#barbGradR)" stroke-width="1.7" opacity="0.62"/>
+    <path d="M108 230 C 86 222, 70 206, 62 184" stroke="url(#barbGradL)" stroke-width="1.6" opacity="0.6"/>
+    <path d="M112 230 C 130 222, 146 206, 154 184" stroke="url(#barbGradR)" stroke-width="1.6" opacity="0.6"/>
+    <path d="M109 196 C 92 190, 80 178, 74 160" stroke="url(#barbGradL)" stroke-width="1.4" opacity="0.55"/>
+    <path d="M111 196 C 124 190, 136 178, 142 160" stroke="url(#barbGradR)" stroke-width="1.4" opacity="0.55"/>
+    <path d="M109 130 C 98 126, 90 118, 86 106" stroke="url(#barbGradL)" stroke-width="1.2" opacity="0.5"/>
+    <path d="M111 130 C 118 126, 122 118, 126 106" stroke="url(#barbGradR)" stroke-width="1.2" opacity="0.5"/>
+  </g>
+
+  <!-- ===== Central quill ===== -->
+  <path d="M110 452 C 108 360, 109 250, 110 70" stroke="url(#quillGrad)" stroke-width="3.4" stroke-linecap="round" filter="url(#softGlow)"/>
+
+  <!-- ===== Eye (ocellus) ===== -->
+  <g transform="translate(110 56)">
+    <ellipse cx="0" cy="0" rx="46" ry="62" fill="url(#eyeCyan)"/>
+    <ellipse cx="0" cy="0" rx="38" ry="52" fill="url(#eyeBronze)"/>
+    <ellipse cx="0" cy="2" rx="27" ry="38" fill="url(#eyeCore)"/>
+    <ellipse cx="0" cy="-4" rx="10" ry="15" fill="#00d4ff" opacity="0.55" filter="url(#softGlow)"/>
+    <ellipse cx="0" cy="0" rx="46" ry="62" fill="none" stroke="#00d4ff" stroke-width="0.6" opacity="0.4"/>
+  </g>
+</svg>

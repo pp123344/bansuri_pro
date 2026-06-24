@@ -1,0 +1,16 @@
+{
+  "name": "Bansuri Pro Studio",
+  "short_name": "Bansuri Pro",
+  "description": "Play a virtual Indian bamboo flute (bansuri) in your browser using Web Audio synthesis.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#0a0a0a",
+  "theme_color": "#003a4d",
+  "icons": [
+    {
+      "src": "/apple-touch-icon.png",
+      "sizes": "180x180",
+      "type": "image/png"
+    }
+  ]
+}
